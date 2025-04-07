@@ -1,0 +1,3 @@
+uniqID1|Amazon|some@id.com|password123
+uniqID2|Google|some@id.com|1243234password123
+jIVqwagw9r|test|test|test
