@@ -33,14 +33,15 @@ class Start:
         self.window_element.config(background=constants.BACKGROUND_COLOR, padx=10, pady=50)
         self.init_canvas()
 
+        self.window_element.mainloop()
+
 
 
     def init_canvas(self):
         self.canvas_element = tkinter.Canvas(width=200, height=200, background=constants.BACKGROUND_COLOR, highlightthickness=0)
-        logo_img = PhotoImage(file="images/")
-        self.canvas_element.create_image(100, 100, image=logo_img)
+        logo_img = PhotoImage(file="images/logo.png")
+        self.canvas_element.create_image(0, 0, image=logo_img)
         self.canvas_element.grid(row=0, column=1)
-
 
     def init_file(self):
         self.file_instance = file_IO.FileIO()
