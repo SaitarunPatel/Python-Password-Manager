@@ -9,6 +9,7 @@ class FileIO:
         self.initial_read_file()
 
     def initial_read_file(self):
+        self.file_data_list = []
         with open(constants.DATA_PATH, mode="r") as file:
             file_contents = file.readlines()
             for entry_data in file_contents:
@@ -21,6 +22,20 @@ class FileIO:
                     "password": split_data[3]
                 })
         print(self.file_data_list)
+
+    def return_file_data(self):
+        self.initial_read_file()
+        return self.file_data_list
+
+    def delete_using_u_id(self, u_id):
+        current_data = []
+        for data in self.file_data_list:
+            if data["uid"] != u_id:
+                current_data.append(data)
+        self.file_data_list = current_data
+        with open(constants.DATA_PATH, mode="w") as file:
+            for entry_data in self.file_data_list:
+                file.write(f"{entry_data['uid']}|{entry_data['website']}|{entry_data['email']}|{entry_data['password']}\n")
 
     def write_into_file(self, website, email, password):
         self.file_data_list.append({

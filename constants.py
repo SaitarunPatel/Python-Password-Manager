@@ -7,6 +7,7 @@ LOGO_PATH = "images/logo.jpg"
 
 DATA_PATH = "data/data.txt"
 
+FONT_NAME = "Courier"
 TEXT_COLOR = "#4F959D"
 TEXT_FONT_SIZE = 20
 
